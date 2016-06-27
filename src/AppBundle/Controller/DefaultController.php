@@ -17,6 +17,7 @@ class DefaultController extends Controller
         echo "Hello Symfony !";
 
         //dump($translator->trans('Hello World'));
+
         $translated = $this->get('translator')->trans('Symfony is great');
 
         // replace this example code with whatever you need
