@@ -14,8 +14,6 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        echo "Hello Symfony !";
-
         //dump($translator->trans('Hello World'));
 
         $translated = $this->get('translator')->trans('Symfony is great');
