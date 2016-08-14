@@ -11,4 +11,8 @@
     <route id="xnw_zong_ping_foo" path="/zp/foo">
         <default key="_controller">XNWZongPingBundle:Default:foo</default>
     </route>
+
+    <route id="xnw_zong_ping_news_index" path="/zp/news">
+        <default key="_controller">XNWZongPingBundle:News:index</default>
+    </route>
 </routes>
