@@ -38,9 +38,9 @@ class News
     private $userId;
 
     /**
-     * @var boolean
+     * @var integer
      */
-    private $status = '0';
+    private $status = 0;
 
     /**
      * @var \DateTime
@@ -128,7 +128,7 @@ class News
     /**
      * Set status
      *
-     * @param boolean $status
+     * @param integer $status
      *
      * @return News
      */

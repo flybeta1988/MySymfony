@@ -6,26 +6,26 @@
     <table>
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Title</th>
                 <th>Content</th>
                 <th>Userid</th>
                 <th>Status</th>
                 <th>Createdat</th>
                 <th>Updatedat</th>
-                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for news in news %}
             <tr>
+                <td>{{ news.id }}</td>
                 <td><a href="{{ path('news_show', { 'id': news.id }) }}">{{ news.title }}</a></td>
                 <td>{{ news.content }}</td>
                 <td>{{ news.userId }}</td>
                 <td>{% if news.status %}Yes{% else %}No{% endif %}</td>
                 <td>{% if news.createdAt %}{{ news.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if news.updatedAt %}{{ news.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ news.id }}</td>
                 <td>
                     <ul>
                         <li>

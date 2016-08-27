@@ -19,7 +19,7 @@
         <option name="unsigned"/>
       </options>
     </field>
-    <field name="status" type="boolean" column="status" nullable="true">
+    <field name="status" type="integer" column="status" nullable="true">
       <options>
         <option name="default">0</option>
       </options>

@@ -2,3 +2,6 @@ xnw_zong_ping_news:
     resource: "@XNWZongPingBundle/Resources/config/routing/news.php"
     prefix:   /news
 
+xnw_zong_ping_user:
+        resource: "@XNWZongPingBundle/Resources/config/routing/user.php"
+        prefix:   /user

@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NewsType extends AbstractType
+class UserType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,10 +15,10 @@ class NewsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('content')
-            ->add('userId')
-            ->add('status')
+            ->add('name')
+            ->add('mobile')
+            ->add('email')
+            ->add('address')
             ->add('createdAt')
             ->add('updatedAt')
         ;
@@ -30,7 +30,7 @@ class NewsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'XNW\ZongPingBundle\Entity\News'
+            'data_class' => 'XNW\ZongPingBundle\Entity\User'
         ));
     }
 }
