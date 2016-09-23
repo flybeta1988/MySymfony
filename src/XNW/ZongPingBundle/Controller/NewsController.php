@@ -40,7 +40,15 @@ class NewsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
+
+            $user = $request->request->get('news');
+            $userId = isset($user['userId']) ? $user['userId'] : 0;
+
+            $user = $em->getRepository('XNWZongPingBundle:User')->findOneBy(array('id' => $userId));
+            $news->setUser($user);
+
             $em->persist($news);
             $em->flush();
 
@@ -61,6 +69,8 @@ class NewsController extends Controller
     {
         $deleteForm = $this->createDeleteForm($news);
 
+        $news->getUser()->getName();
+
         return $this->render('news/show.html.twig', array(
             'news' => $news,
             'delete_form' => $deleteForm->createView(),
@@ -73,6 +83,8 @@ class NewsController extends Controller
      */
     public function editAction(Request $request, News $news)
     {
+        $news->getUser();
+
         $deleteForm = $this->createDeleteForm($news);
         $editForm = $this->createForm('XNW\ZongPingBundle\Form\NewsType', $news);
         $editForm->handleRequest($request);

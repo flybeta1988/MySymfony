@@ -196,4 +196,34 @@ class News
     {
         return $this->updatedAt;
     }
+
+    /**
+     * @var \XNW\ZongPingBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \XNW\ZongPingBundle\Entity\User $user
+     *
+     * @return News
+     */
+    public function setUser(\XNW\ZongPingBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \XNW\ZongPingBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

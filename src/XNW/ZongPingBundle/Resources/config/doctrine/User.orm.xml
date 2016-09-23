@@ -26,5 +26,10 @@
     </field>
     <field name="createdAt" type="datetime" column="created_at" nullable="false"/>
     <field name="updatedAt" type="datetime" column="updated_at" nullable="true"/>
+
+    <one-to-many
+            field="news"
+            target-entity="News"
+            mapped-by="user" />
   </entity>
 </doctrine-mapping>

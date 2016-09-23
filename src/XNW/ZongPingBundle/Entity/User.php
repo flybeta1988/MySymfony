@@ -196,5 +196,50 @@ class User
     {
         return $this->id;
     }
-}
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $news;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->news = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add news
+     *
+     * @param \XNW\ZongPingBundle\Entity\News $news
+     *
+     * @return User
+     */
+    public function addNews(\XNW\ZongPingBundle\Entity\News $news)
+    {
+        $this->news[] = $news;
+
+        return $this;
+    }
+
+    /**
+     * Remove news
+     *
+     * @param \XNW\ZongPingBundle\Entity\News $news
+     */
+    public function removeNews(\XNW\ZongPingBundle\Entity\News $news)
+    {
+        $this->news->removeElement($news);
+    }
+
+    /**
+     * Get news
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNews()
+    {
+        return $this->news;
+    }
+}
