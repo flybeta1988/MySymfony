@@ -5,6 +5,8 @@ namespace XNW\ZongPingBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use XNW\ZongPingBundle\XNWZongPingBundle;
 
 class NewsType extends AbstractType
 {
@@ -17,8 +19,14 @@ class NewsType extends AbstractType
         $builder
             ->add('title')
             ->add('content')
-            ->add('userId')
+            //->add('userId')
             ->add('status')
+            ->add('user', EntityType::class, array(
+                'class' => 'XNWZongPingBundle:User',
+                'choice_label' => 'name',
+                //'multiple' => true,
+                //'expanded' => true,
+            ))
             ->add('createdAt')
             ->add('updatedAt')
         ;

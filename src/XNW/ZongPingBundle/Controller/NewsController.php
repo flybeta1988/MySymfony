@@ -83,7 +83,7 @@ class NewsController extends Controller
      */
     public function editAction(Request $request, News $news)
     {
-        $news->getUser();
+        $news->getUser()->getName();
 
         $deleteForm = $this->createDeleteForm($news);
         $editForm = $this->createForm('XNW\ZongPingBundle\Form\NewsType', $news);
